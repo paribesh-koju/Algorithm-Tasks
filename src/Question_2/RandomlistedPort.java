@@ -11,15 +11,18 @@ public class RandomlistedPort {
 
         // Generate the list of whitelisted ports
         for (int i = 0; i < k; i++) {
+            // Add ports up to k to the whitelist.
             whitelistedPorts.add(i);
         }
         for (int port : blacklisted_ports) {
+            //Remove ports from the whitelistedPorts
             whitelistedPorts.remove(Integer.valueOf(port));
         }
     }
 
     public int get() {
         int randomIndex = (int) (Math.random() * whitelistedPorts.size());
+        // Return the port at the random index.
         return whitelistedPorts.get(randomIndex);
     }
 
